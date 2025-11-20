@@ -1,0 +1,352 @@
+/* src/components/OrderForm.css */
+.order-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.order-form-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Header */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #f0f0f0;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header-icon {
+  color: white;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.close-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+  padding: 60px 40px;
+  color: #22c55e;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+  color: #22c55e;
+}
+
+.success-message h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.success-message p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Order Form */
+.order-form {
+  padding: 0;
+}
+
+/* Order Summary */
+.order-summary {
+  padding: 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.order-summary h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.summary-items {
+  space-y: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.item-price {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 2px solid #e2e8f0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.total-price {
+  color: #22c55e;
+  font-size: 1.2rem;
+}
+
+/* Form Fields */
+.form-fields {
+  padding: 0 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.form-label svg {
+  color: #64748b;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.form-textarea:read-only {
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: calc(100% - 48px);
+  margin: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Loading Animation */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .order-form-overlay {
+    padding: 10px;
+  }
+  
+  .order-form-container {
+    border-radius: 16px;
+  }
+  
+  .form-header {
+    padding: 20px;
+  }
+  
+  .header-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .order-summary,
+  .form-fields {
+    padding: 20px;
+  }
+  
+  .submit-btn {
+    margin: 20px;
+    padding: 14px 20px;
+  }
+}
+
+/* Empty Cart State */
+.order-form-container:has(.empty-cart) {
+  max-width: 400px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 60px 40px;
+  color: #64748b;
+}
+
+.empty-cart svg {
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.empty-cart h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.empty-cart p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+/* Add to src/components/OrderForm.css */
+.success-close-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s;
+}
+
+.success-close-btn:hover {
+  background: #16a34a;
+}
